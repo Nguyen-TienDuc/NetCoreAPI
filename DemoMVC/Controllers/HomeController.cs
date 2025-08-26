@@ -17,7 +17,14 @@ public class HomeController : Controller
     {
         return View();
     }
-
+    [HttpPost]
+    public IActionResult Index(string fullname, string address)
+    {
+        string strOutput = "xin chao " + fullname + " den tu " + address;
+        ViewBag.message = strOutput;
+        return View();
+        
+    }
     public IActionResult Privacy()
     {
         return View();
@@ -28,4 +35,5 @@ public class HomeController : Controller
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
+    
 }
