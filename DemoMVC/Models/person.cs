@@ -13,5 +13,7 @@ namespace DemoMVC.Models
     {public string personId { get; set; }
         public string fullname { get; set; }
         public string address { get; set; }
+        public int YearOfBirth { get; set; }
+        public int Age { get; set; }
     }
 }

@@ -1,0 +1,23 @@
+<h2> Máy tính đơn giản</h2>
+<form method="post">
+    <label>Số A:</label>
+    <input type="number" name="a" step="any" required />
+    <br />
+    <label>Số B:</label>
+    <input type="number" name="b" step="any" required />
+    <br />
+    <label>Phép toán:</label>
+    <select name="operation">
+        <option value="add">Tổng</option>
+        <option value="sub">Hiệu</option>
+        <option value="mul">Tích</option>
+        <option value="div">Thương</option>
+    </select>
+    <br />
+    <button type="submit">Tính</button>
+</form>
+
+@if (ViewBag.ketqua != null)
+{
+    <h3>Kết quả: @ViewBag.ketqua</h3>
+}

@@ -1,0 +1,17 @@
+<h1> Tính chỉ số BMI</h1>
+<form method="post">
+    <label>Cân nặng (kg):</label>
+    <input type="number" name="weight" step="any" required />
+    <br />
+    <label>Chiều cao (m):</label>
+    <input type="double" name="height" step="any" required />
+    <br />
+    <button type="submit">Tính BMI</button>
+</form>
+
+@if (ViewBag.BMI != null)
+{
+    <h3>Kết quả:</h3>
+    <p>BMI: @ViewBag.BMI</p>
+    <p>Tình trạng: @ViewBag.Status</p>
+}
