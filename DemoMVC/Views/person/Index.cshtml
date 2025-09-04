@@ -1,14 +1,40 @@
-<h1>du lieu: @ViewBag.infoperson</h1>
-<form asp-action="Index">
-<label >person ID:</label>
-<input type="text"name="personId">
-<label for="">ho ten:</label>
-<input type="text" name="fullname">
-<label for="">dia chi:</label>
-<input type="text"name="address">
-<label >tuoi:</label>
-<input type="text"name="Age">
-<label>nam sinh:</label>
-<input type="text"name="YearOfBirth">
-<input type="submit" value="gui du lieu">
-</form>
+@model IEnumerable<DemoMVC.Models.Person>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PersonId">Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.PersonId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

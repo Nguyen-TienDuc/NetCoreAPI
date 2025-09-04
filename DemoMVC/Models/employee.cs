@@ -9,7 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DemoMVC.Models
 {
-    public class employee : person 
+    public class employee : Person 
     {
         public string EmployeeId { get; set; }
         public int Age { get; set; }
