@@ -30,7 +30,7 @@ namespace DemoMVC.Controllers
         // POST: Person/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address")] Person person)
+        public async Task<IActionResult> Create([Bind("PersonId,FullName,Address,YearOfBirth,Age")] Person person)
         {
             if (ModelState.IsValid)
             {
@@ -60,7 +60,7 @@ namespace DemoMVC.Controllers
         // POST: Person/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("PersonId,Fullname,Address")] Person person)
+        public async Task<IActionResult> Edit(string id, [Bind("PersonId,FullName,Address,YearOfBirth,Age")] Person person)
         {
             if (id != person.PersonId)
             {
