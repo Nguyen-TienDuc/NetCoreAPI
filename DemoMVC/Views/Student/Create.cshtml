@@ -1,0 +1,36 @@
+@model DemoMVC.Models.Student
+
+@{
+    ViewData["Title"] = "Thêm sinh viên";
+}
+
+<h1>Thêm sinh viên</h1>
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="HoTen"></label>
+                <input asp-for="HoTen" class="form-control" />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Lop"></label>
+                <input asp-for="Lop" class="form-control" />
+                <span asp-validation-for="Lop" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="NamSinh"></label>
+                <input asp-for="NamSinh" class="form-control" type="number" />
+                <span asp-validation-for="NamSinh" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+        </form>
+    </div>
+</div>

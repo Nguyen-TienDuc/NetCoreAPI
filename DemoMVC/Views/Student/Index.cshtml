@@ -1,0 +1,39 @@
+@model IEnumerable<DemoMVC.Models.Student>
+
+@{
+    ViewData["Title"] = "Danh sách sinh viên";
+}
+
+<h1>Danh sách sinh viên</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">+ Thêm mới</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Mã SV</th>
+            <th>Họ tên</th>
+            <th>Lớp</th>
+            <th>Năm sinh</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>@item.MaSV</td>
+        <td>@item.HoTen</td>
+        <td>@item.Lop</td>
+        <td>@item.NamSinh</td>
+        <td>
+            <a asp-action="Edit" asp-route-id="@item.MaSV" class="btn btn-sm btn-warning">Sửa</a>
+            <a asp-action="Details" asp-route-id="@item.MaSV" class="btn btn-sm btn-info">Chi tiết</a>
+            <a asp-action="Delete" asp-route-id="@item.MaSV" class="btn btn-sm btn-danger">Xóa</a>
+        </td>
+    </tr>
+}
+    </tbody>
+</table>

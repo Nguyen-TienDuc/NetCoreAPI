@@ -16,9 +16,10 @@ namespace DemoMVC.Data
     modelBuilder.Entity<Daily>()
         .Property(d => d.MaDaiLy)
         .ValueGeneratedOnAdd();  // EF sẽ tự tăng
-}
+} 
 
         public DbSet<DemoMVC.Models.HeThongPhanPhoi> HeThongPhanPhoi { get; set; } = default!;
+         public DbSet<Student> Student { get; set; } = default!;
         
     }
     
